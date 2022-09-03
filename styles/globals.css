@@ -1,16 +1,44 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+@layer base{
+    body {
+        font-family:'Montserrat'
+    }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@layer utilities {
+    .square{
+        aspect-ratio:1/1
+    }
+
+    .rectangle{
+        aspect-ratio:1/1.5
+    }
+
 }
 
-* {
-  box-sizing: border-box;
+@layer components {
+    .navCard{
+        @apply flex flex-row items-center h-2 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-white hover:bg-blacklist p-6
+    }
+
+    .navCardSelected{
+       @apply flex flex-row items-center h-2 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-800 hover:text-white hover:bg-blacklist p-6
+    }
+
+    .tabCard{
+        @apply flex flex-row items-center h-2 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-white  p-6
+    }
+
+    .tabCardSelected{
+       @apply flex flex-row items-center h-2 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-800 hover:text-white  p-6
+    }
+
+
+
 }
