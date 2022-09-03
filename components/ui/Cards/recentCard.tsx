@@ -4,7 +4,7 @@ import RisingClouds from "/public/rising-clouds.jpg"
 const RecentCard = () => {
     return (
         <>
-            <div className='flex flex-col w-40 space-y-2'>
+            <div className='flex flex-col w-44 space-y-2'>
                 {/* Image */}
                 <div className='relative h-32 w-44 bg-white rounded-lg overflow-clip  shadow-lg'>
                     <Image alt='Card Image' layout='fill' src={RisingClouds} />

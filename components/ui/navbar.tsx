@@ -52,8 +52,8 @@ const Navbar = () => {
                 <div className=" flex flex-row items-center space-x-4">
                     <BellIcon className="w-6 h-6 text-white" />
 
-                    <div className="w-10 h-10 object-fill bg-white rounded-full overflow-clip flex items-center">
-                        <Image alt="profileImage" layout="intrinsic"  objectFit="cover"  src={journalist} />
+                    <div className="relative w-10 h-10  bg-white rounded-full overflow-clip ">
+                        <Image alt="profileImage" layout="fill"  objectFit="cover"  src={journalist} />
                     
                         
                     </div>

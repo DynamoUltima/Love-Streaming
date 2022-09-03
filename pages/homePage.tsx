@@ -17,7 +17,7 @@ const HomePage = ({ children }: { children: React.ReactNode }) => {
 
 
             {/* Main Page */}
-            <div className="col-span-5 ">
+            <div className="col-span-5 h-screen flex flex-col pb-4 ">
                 <Navbar />
                 {children}
             </div>
