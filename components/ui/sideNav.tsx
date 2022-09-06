@@ -35,9 +35,10 @@ const SideNav = () => {
     return (
         <>
             <div className="flex flex-col w-56 bg-mattblack h-full overflow-hidden">
-
-                <div className="flex items-center justify-center h-20 ">
-                    <Image src={'/LE-LOGO-White.png'} alt="logo" width="150" height={'60'} className='md:px-2' />
+                <div className="  px-8  ">
+                    <div className="relative flex flex-col   w-28 h-16  ">
+                        <Image src={'/love-logo.png'} alt="logo" layout="fill" objectFit="contain" className='' />
+                    </div>
                 </div>
 
                 {navLinks.map(link => (
