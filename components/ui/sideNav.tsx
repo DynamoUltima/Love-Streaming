@@ -36,7 +36,7 @@ const SideNav = () => {
         <>
             <div className="flex flex-col w-56 bg-mattblack h-full overflow-hidden">
                 <div className="  px-8  ">
-                    <div className="relative flex flex-col   w-24 h-14 ">
+                    <div className="relative flex flex-col  w-24 h-14 ">
                         <Image src={'/love-logo.png'} alt="logo" layout="fill" objectFit="contain" className='' />
                     </div>
                 </div>

@@ -11,7 +11,7 @@ const Navbar = () => {
     const router = useRouter();
     return (
         <>
-            <div className="flex flex-row  p-2 m-2 items-center    justify-between px-4">
+            <div className=" hidden md:flex  flex-row  p-2 m-2 items-center    justify-between px-4">
                 {/* Search */}
                 <div className="flex flex-row w-96 bg-mattblack items-center rounded-md px-4">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-gray-500">
@@ -57,6 +57,16 @@ const Navbar = () => {
                     
                         
                     </div>
+
+                </div>
+
+            </div>
+            <div className= " md:hidden   h-16">
+
+                <div className=" flex flex-row justify-between items-center p-4">
+                    <div className="text-gray-200">Good Evening</div>
+                    <BellIcon className="w-6 h-6 text-white" />
+
 
                 </div>
 

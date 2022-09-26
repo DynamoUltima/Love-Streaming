@@ -12,6 +12,10 @@ module.exports = {
         grayblack:'#242424',
         blacklist:'#1d1d1d'
       },
+      boxShadow: {
+        myShadow1: "4.1px -5px 0 0 mattblack",
+        myShadow2: "-4.1px -5px 0 0 mattblack",
+      }
     },
   },
   plugins: [],

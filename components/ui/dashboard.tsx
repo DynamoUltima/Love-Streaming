@@ -13,9 +13,9 @@ import PlaylistCard from './Cards/playlistCard';
 
 const Dashboard = () => {
     return (
-        <div className='relatve w-full  overflow-auto   px-4'>
+        <div className='relatve w-full  overflow-auto   px-4 '>
             <div className='grid grid-cols-6 gap-8 '>
-                <div className='col-span-4 space-y-6 '>
+                <div className='  col-span-6 md:col-span-4  space-y-6 overflow-scroll  '>
                     <Carousel />
                     {/* Recent Uloads */}
                     <div className='flex flex-col space-y-4'>
@@ -48,10 +48,11 @@ const Dashboard = () => {
                         </div>
 
                     </div>
+                    
 
 
                 </div>
-                <div className='col-span-2  flex flex-col overflow-auto space-y-4 px-10'>
+                <div className=' hidden  col-span-2  md:flex flex-col overflow-auto space-y-4 px-10'>
                     <div className='text-white text-xs'>Number #1 Trending</div>
                     <TrendingCard />
 

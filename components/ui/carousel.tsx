@@ -38,7 +38,7 @@ const Carousel = () => {
                             <SwiperSlide >
 
                                 <div className='relative h-full w-full  bg-white rounded-md overflow-clip shadow-md'>
-                                    <div className='absolute z-10  h-full left-0 w-3/6'>
+                                    <div className='absolute z-10  h-full left-0 md:w-3/6 w-3/4 '>
                                         <div className='flex flex-col p-10 justify-center space-y-4'>
                                             <div className='text-white text-2xl font-extrabold'>
                                                 Benefits of Speaking in tongues
