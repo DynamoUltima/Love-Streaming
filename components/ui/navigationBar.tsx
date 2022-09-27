@@ -7,7 +7,7 @@ const NavigationBar = () => {
   const Menus = [
     { name: "Home", icon: <div><HomeIcon className="w-6 h-6  "/></div>, dis: "translate-x-0" },
     { name: "Search", icon: <MagnifyingGlassIcon className="w-6 h-6 " />, dis: "translate-x-16" },
-    { name: "PlayList", icon: <Bars3Icon className="w-6 h-6  "/>, dis: "translate-x-32" },
+    { name: "Playlist", icon: <Bars3Icon className="w-6 h-6  "/>, dis: "translate-x-32" },
     { name: "History", icon:<ClockIcon className="w-6 h-6 "/> , dis: "translate-x-48" },
     { name: "Profile", icon: <div className="relative w-6 h-6  bg-white rounded-full overflow-clip ">
     <Image alt="profileImage" layout="fill"  objectFit="cover"  src={journalist} /></div>, dis: "translate-x-64" },
@@ -51,7 +51,7 @@ const NavigationBar = () => {
               <span
                 className={` ${
                   active === i
-                    ? "translate-y-4 duration-700 opacity-100 text-white"
+                    ? "translate-y-4 duration-700 opacity-100 text-white text-xs"
                     : "opacity-0 translate-y-10"
                 } `}
               >

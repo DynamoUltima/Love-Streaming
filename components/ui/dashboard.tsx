@@ -8,6 +8,8 @@ import RecentCard from './Cards/recentCard';
 import MostViewCard from './Cards/mostViewCard';
 import TrendingCard from './Cards/trendingCard';
 import PlaylistCard from './Cards/playlistCard';
+import CategoryCard from './Cards/categoryCard';
+import CategorySampleCard from './Cards/categorySampleCard';
 
 
 
@@ -15,7 +17,7 @@ const Dashboard = () => {
     return (
         <div className='relatve w-full  overflow-auto   px-4 '>
             <div className='grid grid-cols-6 gap-8 '>
-                <div className='  col-span-6 md:col-span-4  space-y-6 overflow-scroll  '>
+                <div className='   col-span-6 md:col-span-4  space-y-6   '>
                     <Carousel />
                     {/* Recent Uloads */}
                     <div className='flex flex-col space-y-4'>
@@ -33,6 +35,21 @@ const Dashboard = () => {
 
                         </div>
                     </div>
+                    {/* Cateogories */}
+                    <div className=' md:hidden flex-col space-y-4'>
+                        <div className='text-white text-xs'>Browse by Category</div>
+                        {/* List */}
+                        <div className='flex flex-row overflow-auto space-x-6'>
+                            {/* Card */}
+                           <CategoryCard/>
+                           <CategorySampleCard/>
+
+
+                        </div>
+
+                    </div>
+
+
                     {/* Most Viewed */}
                     <div className='flex flex-col space-y-4'>
                         <div className='text-white text-xs'>Most Viewed</div>
