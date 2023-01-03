@@ -13,12 +13,11 @@ const HomePage = ({ children }: { children: React.ReactNode }) => {
             {/* Side bar */}
             <div className="hidden md:flex h-screen col-span-1 ">
                 <SideNav />
-
             </div>
 
 
             {/* Main Page */}
-            <div className=" md:col-span-5   col-span-6  h-full flex   overflow-auto flex-col">
+            <div className=" md:col-span-5  col-span-6  h-full flex   overflow-auto flex-col">
                 <Navbar />
                 {children}
                 <div className="  md:hidden  ">
@@ -26,7 +25,7 @@ const HomePage = ({ children }: { children: React.ReactNode }) => {
                 </div>
             </div>
 
-           
+
 
 
         </div>

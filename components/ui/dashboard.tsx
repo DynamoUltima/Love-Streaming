@@ -19,7 +19,7 @@ const Dashboard = () => {
             <div className='grid grid-cols-6 gap-8 '>
                 <div className='   col-span-6 md:col-span-4  space-y-6   '>
                     <Carousel />
-                    {/* Recent Uloads */}
+                    {/* Recent Uploads */}
                     <div className='flex flex-col space-y-4'>
                         <div className='text-white text-xs'>Recent Uploads</div>
                         {/* List */}
