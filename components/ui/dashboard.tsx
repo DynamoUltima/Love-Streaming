@@ -12,7 +12,7 @@ import CategoryCard from './Cards/categoryCard';
 import CategorySampleCard from './Cards/categorySampleCard';
 
 
-const messages = [
+export const messages = [
     {
         "kind": "youtube#searchResult",
         "etag": "2PokmHcjdd5JoOvcpTcd1W4Kw2g",
@@ -444,14 +444,6 @@ const Dashboard = () => {
                                 url={item.id.videoId}
                             />
                             )}
-
-
-                            {/* <RecentCard />
-                            <RecentCard />
-                            <RecentCard />
-                            <RecentCard />
-                            <RecentCard />
-                            <RecentCard /> */}
 
 
                         </div>
