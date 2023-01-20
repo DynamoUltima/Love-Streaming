@@ -3,6 +3,8 @@ import ReactPlayer from "react-player";
 import MostViewCard from "../components/ui/Cards/mostViewCard";
 import PlaylistCard from "../components/ui/Cards/playlistCard";
 import TrendingCard from "../components/ui/Cards/trendingCard";
+import { IconButton, Button } from "@material-tailwind/react";
+import { HeartIcon, ShareIcon,FolderOpenIcon,PlusCircleIcon } from "@heroicons/react/24/outline";
 
 const Player = () => {
 
@@ -11,21 +13,51 @@ const Player = () => {
     return (
 
 
-        
-        <div className="bg-grayblack h-screen  w-full overflow-auto ">
-            <div className="flex flex-row h-3/5  md:w-full ">
-                <div className='w-full rounded-full p-6 '>
-                    <div className="flex flex-col flex-1 h-full w-full">
-                        <ReactPlayer
-                            url={`https://www.youtube.com/watch?v=${videoId}`}
-                            width="100%"
-                            height={'100%'}
-                            controls={true}
 
-                        />
-                        <div className="flex flex-col">
-                            <div className="flex">
+        <div className="bg-grayblack h-screen  w-full overflow-auto ">
+            <div className="flex flex-row h-4/6 md:w-full ">
+                <div className='w-full rounded-full p-6 '>
+                    <div className="flex flex-col flex-1 h-full w-full ">
+                        <div className="h-full rounded-xl shadow-2xl overflow-clip mb-4">
+                            <ReactPlayer
+                                url={`https://www.youtube.com/watch?v=${videoId}`}
+                                width="100%"
+                                height={'100%'}
+                                controls={true}
+                                pip={true}
+                            />
+                        </div>
+
+                        <div className="flex flex-col ">
+                            <div className="flex text-lg text-white font-bold justify-between">
                                 <div>Benefits of Speaking in Tongues</div>
+                                <div className="flex space-x-2">
+                                    <Button className="bg-blacklist p-2">
+                                        <div className="flex items-center space-x-2">
+                                            <HeartIcon className="w-6 h-6" />
+                                            <div className="text-white">Like</div>
+                                        </div>
+
+                                    </Button>
+
+                                    <Button className="bg-blacklist p-2">
+                                        <div className="flex items-center space-x-2">
+                                            <ShareIcon className="w-6 h-6" />
+                                            <div className="text-white">Share</div>
+                                        </div>
+
+                                    </Button>
+
+                                    <Button className="bg-blacklist p-2">
+                                        <div className="flex items-center space-x-2">
+                                            <PlusCircleIcon className="w-6 h-6" />
+                                            <div className="text-white">Add To Playlist</div>
+                                        </div>
+
+                                    </Button>
+
+                                </div>
+
                             </div>
                         </div>
 
@@ -36,7 +68,7 @@ const Player = () => {
 
 
 
-                <div className=' hidden  col-span-2  md:flex flex-col overflow-auto space-y-4  px-10 py-6'>
+                <div className=' hidden  col-span-2  md:flex flex-col overflow-auto space-y-4  px-10 py-6 bg-blacklist m-6 rounded-lg'>
                     <div className='text-white text-xs'>Number #1 Trending</div>
                     <TrendingCard />
 

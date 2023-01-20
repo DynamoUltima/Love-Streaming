@@ -7,9 +7,9 @@ const MostViewCard = () => {
 
     
      <>
-            <div className='flex flex-col w-56 space-y-2 '>
+            <div className='flex flex-col md:w-56 w-40 space-y-2 '>
                 {/* Image */}
-                <div className='relative h-40 w-56 bg-white rounded-lg overflow-clip  shadow-lg'>
+                <div className='relative md:h-40 md:w-56  h-32 w-40  bg-white rounded-lg overflow-clip  shadow-lg'>
                     <Image  alt='Card Image' layout='fill' src={ZionsHill} />
                 </div>
                 {/* Text */}
