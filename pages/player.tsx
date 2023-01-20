@@ -13,9 +13,9 @@ const Player = () => {
 
         
         <div className="bg-grayblack h-screen  w-full overflow-auto ">
-            <div className="flex flex-row h-3/5 ">
-                <div className='w-3/4 md:w-full rounded-full p-6 '>
-                    <div className="flex flex-col flex-1 h-full">
+            <div className="flex flex-row h-3/5  md:w-full ">
+                <div className='w-full rounded-full p-6 '>
+                    <div className="flex flex-col flex-1 h-full w-full">
                         <ReactPlayer
                             url={`https://www.youtube.com/watch?v=${videoId}`}
                             width="100%"
