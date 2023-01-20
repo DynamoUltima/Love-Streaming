@@ -9,22 +9,34 @@ const Player = () => {
     const router = useRouter();
     const { videoId } = router.query;
     return (
+
+
+        
         <div className="bg-grayblack h-screen  w-full overflow-auto ">
-            <div className="flex flex-row ">
+            <div className="flex flex-row h-3/5 ">
                 <div className='w-3/4 md:w-full rounded-full p-6 '>
-                    <ReactPlayer
-                        url={`https://www.youtube.com/watch?v=${videoId}`}
-                        width="100%"
-                        height={'100%'}
-                        controls={true}
+                    <div className="flex flex-col flex-1 h-full">
+                        <ReactPlayer
+                            url={`https://www.youtube.com/watch?v=${videoId}`}
+                            width="100%"
+                            height={'100%'}
+                            controls={true}
 
-                    />
-                     
+                        />
+                        <div className="flex flex-col">
+                            <div className="flex">
+                                <div>Benefits of Speaking in Tongues</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
                 </div>
-              
 
 
-                <div className=' hidden  col-span-2  md:flex flex-col overflow-auto space-y-4 px-10 py-6'>
+
+                <div className=' hidden  col-span-2  md:flex flex-col overflow-auto space-y-4  px-10 py-6'>
                     <div className='text-white text-xs'>Number #1 Trending</div>
                     <TrendingCard />
 
@@ -65,31 +77,25 @@ const Player = () => {
 
 
 
-          {/* Most Viewed */}
-          <div className='flex flex-col space-y-4 p-4'>
-                        <div className='text-white text-xs'>Most Viewed</div>
-                        {/* List */}
-                        <div className='flex flex-row overflow-auto space-x-12'>
-                            {/* Card */}
-                            <MostViewCard />
-                            <MostViewCard />
-                            <MostViewCard />
-                            <MostViewCard />
-                            <MostViewCard />
-                            <MostViewCard />
-                            <MostViewCard />
-                            <MostViewCard />
+            {/* Most Viewed */}
+            <div className='flex flex-col space-y-4 p-4'>
+                <div className='text-white text-xs'>Most Viewed</div>
+                {/* List */}
+                <div className='flex flex-row overflow-auto space-x-12'>
+                    {/* Card */}
+                    <MostViewCard />
+                    <MostViewCard />
+                    <MostViewCard />
+                    <MostViewCard />
+                    <MostViewCard />
+                    <MostViewCard />
+                    <MostViewCard />
+                    <MostViewCard />
 
 
-                        </div>
+                </div>
 
-                    </div>
-            
-           
-
-            
-
-
+            </div>
 
         </div>
 
