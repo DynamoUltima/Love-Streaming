@@ -3,13 +3,16 @@ import ReactPlayer from "react-player";
 import MostViewCard from "../components/ui/Cards/mostViewCard";
 import PlaylistCard from "../components/ui/Cards/playlistCard";
 import TrendingCard from "../components/ui/Cards/trendingCard";
-import { IconButton, Button } from "@material-tailwind/react";
+
 import { HeartIcon, ShareIcon,FolderOpenIcon,PlusCircleIcon } from "@heroicons/react/24/outline";
+import { Button } from "@material-tailwind/react";
 
 const Player = () => {
 
     const router = useRouter();
     const { videoId } = router.query;
+
+    const hadndleSubmit =()=>{}
     return (
 
 
@@ -31,27 +34,27 @@ const Player = () => {
                         <div className="flex flex-col ">
                             <div className="flex text-lg text-white font-bold justify-between">
                                 <div>Benefits of Speaking in Tongues</div>
-                                <div className="flex space-x-2">
-                                    <Button className="bg-blacklist p-2">
+                                <div className="flex  space-x-2">
+                                    <Button   onClick={() => hadndleSubmit} type="button" className="bg-blacklist !shadow-md p-2"  nonce={undefined} onResize={undefined} onResizeCapture={undefined} >
                                         <div className="flex items-center space-x-2">
                                             <HeartIcon className="w-6 h-6" />
-                                            <div className="text-white">Like</div>
+                                            <div className="capitalize font-[Montserrat] text-white">Like</div>
                                         </div>
 
                                     </Button>
 
-                                    <Button className="bg-blacklist p-2">
+                                    <Button  className="bg-blacklist !shadow-md p-2"  nonce={undefined} onResize={undefined} onResizeCapture={undefined}>
                                         <div className="flex items-center space-x-2">
                                             <ShareIcon className="w-6 h-6" />
-                                            <div className="text-white">Share</div>
+                                            <div className="capitalize font-[Montserrat] text-white">Share</div>
                                         </div>
 
                                     </Button>
 
-                                    <Button className="bg-blacklist p-2">
+                                    <Button className="bg-blacklist !shadow-md p-2"  nonce={undefined} onResize={undefined} onResizeCapture={undefined}>
                                         <div className="flex items-center space-x-2">
                                             <PlusCircleIcon className="w-6 h-6" />
-                                            <div className="text-white">Add To Playlist</div>
+                                            <div className="capitalize font-[Montserrat] text-white">Add To Playlist</div>
                                         </div>
 
                                     </Button>
