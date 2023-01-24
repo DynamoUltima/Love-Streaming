@@ -44,9 +44,9 @@ const SideNav = () => {
                 {navLinks.map(link => (
                     <ul key={link.name} className="flex flex-col py-1">
                         <li>
-                            <Link href="/dashboardPage">
+                            <Link href="/">
 
-                                <a className={router.pathname === "/dashboardPage" ? "navCardSelected" : "navCard"}>
+                                <a className={router.pathname === "/" ? "navCardSelected" : "navCard"}>
                                     <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400">{link.icon}</span>
                                     <span className="text-sm font-medium">{link.name}</span>
                                 </a>
