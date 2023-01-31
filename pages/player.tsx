@@ -40,11 +40,12 @@ const Player = () => {
                         <div className="flex flex-col flex-1 h-full w-full ">
                             <div className="h-full rounded-xl shadow-2xl overflow-clip mb-4">
                                 <ReactPlayer
-                                    url={`https://www.youtube.com/watch?v=${videoId}`}
+                                    url={`https://www.youtube.com/watch?v=${videoId}&rel=0`}
                                     width="100%"
                                     height={'100%'}
                                     controls={true}
                                     pip={true}
+                                    
                                 />
                             </div>
 
