@@ -9,11 +9,12 @@ import { Accordion, AccordionBody, AccordionHeader, Button } from "@material-tai
 import { SetStateAction, useState } from "react";
 import Navbar from "../components/ui/navbar";
 import SideNav from "../components/ui/sideNav";
+import { messages } from "../data/sample";
 
 const Player = () => {
 
     const router = useRouter();
-    const { videoId ,title} = router.query;
+    const { videoId, title } = router.query;
 
     const hadndleSubmit = () => { }
 
@@ -174,17 +175,17 @@ const Player = () => {
             {/* Most Viewed */}
             <div className='flex flex-col space-y-4 p-4'>
                 <div className='text-white text-xs'>Most Viewed</div>
-               
+
                 <div className='flex flex-row overflow-auto space-x-12'>
-                    
-                    <MostViewCard />
-                    <MostViewCard />
-                    <MostViewCard />
-                    <MostViewCard />
-                    <MostViewCard />
-                    <MostViewCard />
-                    <MostViewCard />
-                    <MostViewCard />
+
+                    {messages.slice(0).reverse().map(item => <MostViewCard
+                        key={item.snippet.title}
+                        image={item.snippet.thumbnails.high.url}
+                        name={item.snippet.title}
+                        url={item.id.videoId}
+                    />
+                    )
+                    }
 
 
                 </div>
