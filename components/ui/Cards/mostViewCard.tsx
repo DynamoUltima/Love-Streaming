@@ -19,7 +19,7 @@ const MostViewCard = ({ image, name, url }: { image: string; name: string; url: 
 
     
      <>
-            <div className='flex flex-col md:w-56 w-40 space-y-2 '>
+            <div onClick={handleClick} className='flex flex-col md:w-56 w-40 space-y-2 '>
                 {/* Image */}
                 <div className='relative md:h-40 md:w-56  h-32 w-40  bg-white rounded-lg overflow-clip  shadow-lg'>
                     <Image  alt='Card Image' layout='fill' src={image} />
