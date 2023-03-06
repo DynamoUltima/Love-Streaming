@@ -1,15 +1,15 @@
 import { useRouter } from "next/router";
 
-const TagCards = ({name,color}:{name:String,color:String}) => {
+const TagCards = ({name,color}:{name:string,color:string}) => {
 
     const router = useRouter();
 
     const handleClick = () => {
         router.push({
           pathname: '/tagDetailPage',
-        //   query: {
-        //     videoId: url,
-        //   }
+          query: {
+            title:name,
+          }
         });
       };
     return (
