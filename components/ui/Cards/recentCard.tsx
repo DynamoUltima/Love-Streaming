@@ -12,6 +12,7 @@ const RecentCard = ({ image, name, url }: { image: string; name: string; url: st
           pathname: '/player',
           query: {
             videoId: url,
+            title:name
           }
         });
       };

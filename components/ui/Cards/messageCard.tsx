@@ -1,10 +1,24 @@
 import Image, { StaticImageData } from "next/image";
+import { useRouter } from "next/router";
 
 
 const MessageCard = ({image, name, url}:{image: string; name: string; url: string}) => {
+
+    const router = useRouter();
+
+    const handleClick = () => {
+        router.push({
+          pathname: '/player',
+          query: {
+            videoId: url,
+            title:name
+          }
+        });
+      };
+
     return (
         <>
-            <div className='flex flex-col space-y-2'>
+            <div onClick={handleClick} className='flex flex-col space-y-2'>
                 {/* Image */}
                 <div className='relative h-60 bg-white rounded-lg overflow-clip  shadow-lg mb-4'>
                     <Image alt='Card Image' layout="fill"  src={image} style={{objectFit: 'cover'}} />

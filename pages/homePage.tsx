@@ -6,30 +6,31 @@ const HomePage = ({ children }: { children: React.ReactNode }) => {
 
 
 
-
+    // 
 
     return (
-        <div className="relative   m-auto h-full grid grid-cols-6 bg-grayblack">
-            {/* Side bar */}
-            <div className="hidden md:flex h-screen col-span-1 ">
-                <SideNav />
-            </div>
+       
+            <div className=" h-full grid grid-cols-6 bg-grayblack">
+                {/* Side bar */}
+                <div className="hidden md:flex h-full col-span-1 ">
+                    <SideNav />
+                </div>
 
 
-            {/* Main Page */}
-            <div className=" md:col-span-5  col-span-6  h-full  flex   overflow-auto flex-col">
-                <Navbar />
-                {children}
-                <div className="  md:hidden  ">
+                {/* Main Page */}
+                <div className=" md:col-span-5 overflow-y-clip col-span-6  md:h-screen  h-screen  flex    flex-col">
+                    <Navbar />
+                    {children}
+                    <div className="  md:hidden ">
                     <NavigationBar />
                 </div>
+                </div>
+
+
+
+
             </div>
-
-
-
-
-        </div>
-
+       
     );
 }
 

@@ -13,7 +13,7 @@ import SideNav from "../components/ui/sideNav";
 const Player = () => {
 
     const router = useRouter();
-    const { videoId } = router.query;
+    const { videoId ,title} = router.query;
 
     const hadndleSubmit = () => { }
 
@@ -26,14 +26,14 @@ const Player = () => {
 
 
 
-        <div className="bg-grayblack h-screen   w-full ">
+        <div className="bg-grayblack h-full overflow-auto   w-full ">
 
 
 
 
 
 
-            <div className="flex flex-row h-5/6 md:w-full ">
+            <div className="flex flex-row min-h-screen h-5/6 md:w-full ">
                 <div className='w-full rounded-full p-6 '>
                     <div className="flex flex-col flex-1 h-full w-full ">
                         <div className="h-full rounded-xl shadow-2xl overflow-clip mb-4">
@@ -49,7 +49,7 @@ const Player = () => {
 
                         <div className="flex flex-col ">
                             <div className="flex  flex-col  md:flex-row text-lg text-white font-bold justify-between">
-                                <div>Benefits of Speaking in Tongues</div>
+                                <div>{title}</div>
 
                                 <div className="flex  space-x-2">
 
@@ -174,9 +174,9 @@ const Player = () => {
             {/* Most Viewed */}
             <div className='flex flex-col space-y-4 p-4'>
                 <div className='text-white text-xs'>Most Viewed</div>
-                {/* List */}
+               
                 <div className='flex flex-row overflow-auto space-x-12'>
-                    {/* Card */}
+                    
                     <MostViewCard />
                     <MostViewCard />
                     <MostViewCard />

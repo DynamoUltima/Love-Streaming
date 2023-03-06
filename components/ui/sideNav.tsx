@@ -57,7 +57,7 @@ const SideNav = () => {
 
                                 <a className={router.pathname === "/" ? "navCardSelected" : "navCard"}>
                                     <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400">{link.icon}</span>
-                                    <span className="text-sm font-medium">{link.name}</span>
+                                    <span className="text-sm font-medium text-gray-400">{link.name}</span>
                                 </a>
 
                             </Link>
