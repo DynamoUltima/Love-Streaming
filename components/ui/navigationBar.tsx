@@ -35,8 +35,8 @@ const NavigationBar = () => {
           ></span>
         </span>
         {Menus.map((menu, i) => (
-          <Link href={`${menu.path}`}>
-            <li key={i} className="w-16">
+          <Link key={i} href={`${menu.path}`}>
+            <li  className="w-16">
               <a
                 className="flex flex-col text-center pt-6"
                 onClick={() => {
