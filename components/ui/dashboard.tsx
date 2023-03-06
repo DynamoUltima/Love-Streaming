@@ -469,11 +469,17 @@ const Dashboard = () => {
                         {/* List */}
                         <div className='flex flex-row overflow-auto space-x-12'>
                             {/* Card */}
-                            <MostViewCard />
-                            <MostViewCard />
-                            <MostViewCard />
-                            <MostViewCard />
 
+                            {messages.slice(0).reverse().map(item => <MostViewCard
+                                key={item.snippet.title}
+                                image={item.snippet.thumbnails.high.url}
+                                name={item.snippet.title}
+                                url={item.id.videoId}
+                            />
+                            )
+                            }
+
+                            
 
                         </div>
 
