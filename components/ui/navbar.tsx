@@ -1,25 +1,51 @@
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { BellIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
-import journalist  from   "../../public/journalist.jpeg"
+import journalist from "../../public/journalist.jpeg"
+import SearchBar from "./searchBar";
 
 const Navbar = () => {
     let tablink = [{ name: 'All' }, { name: 'Message' }, { name: 'Music' }]
 
     const router = useRouter();
+    const [isOpen, setIsOpen] = useState(true);
+    function closeModal() {
+        setIsOpen(false)
+    }
+
+    function openModal() {
+        setIsOpen(true)
+    }
+    const handleClick = () => {
+        setIsOpen(!isOpen);
+      };
     return (
         <>
             <div className=" hidden md:flex  flex-row  p-2 m-2 items-center    justify-between px-4">
                 {/* Search */}
-                <div className="flex flex-row w-96 bg-mattblack items-center rounded-md px-4">
+                {/* <div className="flex flex-row w-96 bg-mattblack items-center rounded-md px-4">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-gray-500">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                     </svg>
 
                     <input type="text" placeholder="Search" className="ml-6  bg-mattblack p-2 text-gray-200 focus:outline-none" />
 
+                </div> */}
+
+
+                <div  className="flex">
+                    <MagnifyingGlassIcon
+                        className="h-5 w-5 text-gray-400"
+                        aria-hidden="true"
+                         onClick={handleClick}
+
+                    />
+
+                    <SearchBar isOpen={isOpen} setIsOpen={setIsOpen} />
                 </div>
 
 
@@ -35,7 +61,7 @@ const Navbar = () => {
 
                                     </a>
                                     <div className={"w-1 h-1  bg-white rounded-full"} >
-                                        
+
                                     </div>
                                 </div>
 
@@ -53,15 +79,15 @@ const Navbar = () => {
                     <BellIcon className="w-6 h-6 text-white" />
 
                     <div className="relative w-10 h-10  bg-white rounded-full overflow-clip ">
-                        <Image alt="profileImage" layout="fill"  objectFit="cover"  src={journalist} />
-                    
-                        
+                        <Image alt="profileImage" layout="fill" objectFit="cover" src={journalist} />
+
+
                     </div>
 
                 </div>
 
             </div>
-            <div className= " md:hidden   h-16">
+            <div className=" md:hidden   h-16">
 
                 <div className=" flex flex-row justify-between items-center p-4">
                     <div className="text-gray-200">Good Evening</div>

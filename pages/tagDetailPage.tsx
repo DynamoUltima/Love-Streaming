@@ -5,6 +5,7 @@ import { messages } from "../data/sample";
 const TagDetailPage = () => {
     const router = useRouter();
     const {  title } = router.query;
+    
     return (
         <>
         <div className="h-screen flex flex-col space-y-4 px-4 overflow-auto">
