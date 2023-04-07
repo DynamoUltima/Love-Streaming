@@ -1,3 +1,4 @@
+import { MiniPlayer } from "../components/ui/MiniPlayer/miniPlayer";
 import Navbar from "../components/ui/navbar";
 import NavigationBar from "../components/ui/navigationBar";
 import SideNav from "../components/ui/sideNav";
@@ -18,9 +19,11 @@ const HomePage = ({ children }: { children: React.ReactNode }) => {
 
 
                 {/* Main Page */}
-                <div className=" md:col-span-5 overflow-y-clip col-span-6  md:h-screen  h-screen  flex    flex-col">
+                <div className="relative md:col-span-5 overflow-y-clip col-span-6  md:h-screen  h-screen  flex    flex-col">
                     <Navbar />
                     {children}
+                    
+                    <MiniPlayer />
                     <div className="  md:hidden ">
                     <NavigationBar />
                 </div>
