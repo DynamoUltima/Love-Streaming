@@ -1,5 +1,22 @@
 
 
+
+
+
+
+export const tagList = [
+    { name: 'Love', color: 'red' },
+    { name: 'Hope', color: 'blue' },
+    { name: 'Holy Spirit', color: 'yellow' },
+    { name: 'Shepherding', color: 'green' },
+    { name: 'Tithe', color: 'teal' },
+    { name: 'Prosperity', color: 'indigo' },
+    { name: 'Salvation', color: 'orange' },
+    { name: 'Faith', color: 'lime' },
+    { name: 'Jesus', color: 'amber' },
+]
+
+
 export const messages = [
     {
         "kind": "youtube#searchResult",
@@ -166,7 +183,7 @@ export const messages = [
                     "height": 360
                 }
             },
-            "channelTitle": "Bishop Isaac Oti-Boateng",
+            "channelTitle": "Bishop Isaac Oti-Boateng", 
             "liveBroadcastContent": "none",
             "publishTime": "2021-08-05T19:00:09Z"
         }
@@ -409,18 +426,4 @@ export const messages = [
             "publishTime": "2021-06-28T19:00:00Z"
         }
     }
-]
-
-
-
-export const tagList = [
-    { name: 'Love', color: 'red' },
-    { name: 'Hope', color: 'blue' },
-    { name: 'Holy Spirit', color: 'yellow' },
-    { name: 'Shepherding', color: 'green' },
-    { name: 'Tithe', color: 'teal' },
-    { name: 'Prosperity', color: 'indigo' },
-    { name: 'Salvation', color: 'orange' },
-    { name: 'Faith', color: 'lime' },
-    { name: 'Jesus', color: 'amber' },
 ]

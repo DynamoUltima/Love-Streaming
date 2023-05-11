@@ -3,12 +3,14 @@ import SearchChips from "./Chips/searchChips";
 import RisingClouds from "/public/rising-clouds.jpg"
 import BasicChips from "./Chips/basicChips";
 import MessageTiles from "./Tiles/messageTiles";
+import RecentCard from "./Cards/recentCard";
+import { messages } from "../../data/sample";
 
 const SearchDelegate = () => {
     return (
         <>
             {/* chips */}
-            <div className=" flex flex-col  px-5 space-y-6">
+            <div className=" flex flex-col  px-5 space-y-6 overflow-auto">
                 <div className="flex flex-row space-x-2 overflow-auto">
                     <SearchChips title={'All'} />
                     <SearchChips title={'5 mins'} />
@@ -41,11 +43,6 @@ const SearchDelegate = () => {
                             </div>
 
 
-
-
-
-
-
                         </div>
 
 
@@ -72,6 +69,41 @@ const SearchDelegate = () => {
 
                     </div>
 
+                </div>
+
+                {/* Music */}
+                <div className='flex flex-col space-y-4'>
+                    <div className='text-white text-base'>Music</div>
+                    {/* List */}
+                    <div className='flex flex-row overflow-auto space-x-10'>
+                        {/* Card */}
+                        {messages.map(item => <RecentCard
+                            key={item.snippet.title}
+                            image={item.snippet.thumbnails.high.url}
+                            name={item.snippet.title}
+                            url={item.id.videoId}
+                        />
+                        )}
+
+
+                    </div>
+                </div>
+
+                <div className='flex flex-col space-y-4'>
+                    <div className='text-white text-base'>5 mins</div>
+                    {/* List */}
+                    <div className='flex flex-row overflow-auto space-x-10'>
+                        {/* Card */}
+                        {messages.map(item => <RecentCard
+                            key={item.snippet.title}
+                            image={item.snippet.thumbnails.high.url}
+                            name={item.snippet.title}
+                            url={item.id.videoId}
+                        />
+                        )}
+
+
+                    </div>
                 </div>
 
             </div>
