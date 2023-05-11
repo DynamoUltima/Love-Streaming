@@ -35,10 +35,10 @@ const SearchBar = ({ isOpen = false, setIsOpen }: { isOpen: boolean, setIsOpen: 
                     .replace(/\s+/g, '')
                     .includes(query.toLowerCase().replace(/\s+/g, ''))
             )
-
+            // isOpen
     return (
         <div className='flex  items-center '>
-            <Transition.Root show={isOpen} as={Fragment} afterLeave={() => setQuery('')}>
+            <Transition.Root show={false} as={Fragment} afterLeave={() => setQuery('')}>
                 <Dialog
 
                     onClose={setIsOpen}

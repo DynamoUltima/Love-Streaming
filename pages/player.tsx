@@ -29,11 +29,6 @@ const Player = () => {
 
         <div className="bg-grayblack h-full overflow-auto   w-full ">
 
-
-
-
-
-
             <div className="flex flex-row min-h-screen h-5/6 md:w-full ">
                 <div className='w-full rounded-full p-6 '>
                     <div className="flex flex-col flex-1 h-full w-full ">

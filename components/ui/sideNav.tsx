@@ -2,12 +2,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { useAuth } from "../context/authContext";
+
 
 const SideNav = () => {
 
     const router = useRouter();
 
     const [currentLink,setCurrentLink] = useState('');
+    const {isToggled,toggle} = useAuth();
+
+    console.log({toggleState:isToggled,name :'toggling'});
 
     let navLinks = [
         {
@@ -127,6 +132,8 @@ const SideNav = () => {
 
                     </div>
                 </div>
+
+                <button onClick={toggle} className="bg-blue-50">toggle</button>
 
             </div>
         </>

@@ -1,12 +1,20 @@
 import Image, { StaticImageData } from "next/image";
 import { useRouter } from "next/router";
+import { useAuth } from "../../context/authContext";
 
 
 const MessageCard = ({image, name, url}:{image: string; name: string; url: string}) => {
 
     const router = useRouter();
+    const {isToggled,toggle,setToggle} = useAuth();
 
     const handleClick = () => {
+        
+        if(isToggled){
+            setToggle(false)
+        }
+        console.log({toggleState:isToggled,place:'message card'})
+
         router.push({
           pathname: '/player',
           query: {
@@ -15,6 +23,8 @@ const MessageCard = ({image, name, url}:{image: string; name: string; url: strin
           }
         });
       };
+
+
 
     return (
         <>

@@ -3,16 +3,43 @@ import { BellIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import journalist from "../../public/journalist.jpeg"
 import SearchBar from "./searchBar";
+import { useAuth } from "../context/authContext";
+import { Combobox } from "@headlessui/react";
 
 const Navbar = () => {
     let tablink = [{ name: 'All' }, { name: 'Message' }, { name: 'Music' }]
 
+
     const router = useRouter();
+    const { isSearch, search, setSearch } = useAuth();
     const [isOpen, setIsOpen] = useState(true);
+    const [query, setQuery] = useState('')
+
+
+    console.log({ searchState: isSearch, place: 'navbar' });
+
+    useEffect(()=>{
+        if(query.length==0){
+            setSearch(false)
+        }
+    
+        if(query.length!=0){
+            if(router.pathname !='/browse'){
+                router.push('/browse')
+            }
+            
+            setSearch(true)
+        }
+
+    },[query,router])
+
+    
+
+    console.log(query)
     function closeModal() {
         setIsOpen(false)
     }
@@ -20,9 +47,7 @@ const Navbar = () => {
     function openModal() {
         setIsOpen(true)
     }
-    const handleClick = () => {
-        setIsOpen(!isOpen);
-      };
+    
     return (
         <>
             <div className=" hidden md:flex  flex-row  p-2 m-2 items-center    justify-between px-4">
@@ -37,13 +62,30 @@ const Navbar = () => {
                 </div> */}
 
 
-                <div  className="flex">
-                    <MagnifyingGlassIcon
+                <div className="flex">
+                    {/* <MagnifyingGlassIcon
                         className="h-5 w-5 text-gray-400"
                         aria-hidden="true"
-                         onClick={handleClick}
+                        onClick={search}
 
-                    />
+                    /> */}
+
+                    <Combobox onChange={()=>{}}  value=""  >
+                        <Combobox.Input
+                        placeholder="Search"
+                            className="w-full border-none rounded-md py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0"
+
+                            displayValue={() => query}
+                            onChange={(event) => {
+                                setQuery(event.target.value)
+                                
+                                
+                             }}
+
+                        />
+                    </Combobox>
+
+
 
                     <SearchBar isOpen={isOpen} setIsOpen={setIsOpen} />
                 </div>

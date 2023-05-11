@@ -2,12 +2,20 @@ import Image from "next/image";
 import Link from "next/link";
 import RisingClouds from "/public/rising-clouds.jpg"
 import { useRouter } from 'next/router';
+import { useAuth } from "../../context/authContext";
 
 const RecentCard = ({ image, name, url }: { image: string; name: string; url: string }) => {
 
     const router = useRouter();
+    const {isToggled,toggle, setToggle} = useAuth();
 
     const handleClick = () => {
+
+      if(isToggled){
+        setToggle(false)
+    }
+    console.log({toggleState:isToggled,place:'recentcard'})
+
         router.push({
           pathname: '/player',
           query: {

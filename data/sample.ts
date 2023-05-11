@@ -410,3 +410,17 @@ export const messages = [
         }
     }
 ]
+
+
+
+export const tagList = [
+    { name: 'Love', color: 'red' },
+    { name: 'Hope', color: 'blue' },
+    { name: 'Holy Spirit', color: 'yellow' },
+    { name: 'Shepherding', color: 'green' },
+    { name: 'Tithe', color: 'teal' },
+    { name: 'Prosperity', color: 'indigo' },
+    { name: 'Salvation', color: 'orange' },
+    { name: 'Faith', color: 'lime' },
+    { name: 'Jesus', color: 'amber' },
+]
