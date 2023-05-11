@@ -2,6 +2,7 @@ import Image from "next/image";
 import SearchChips from "./Chips/searchChips";
 import RisingClouds from "/public/rising-clouds.jpg"
 import BasicChips from "./Chips/basicChips";
+import MessageTiles from "./Tiles/messageTiles";
 
 const SearchDelegate = () => {
     return (
@@ -22,7 +23,7 @@ const SearchDelegate = () => {
                     <div className="flex flex-col space-y-2">
                         <div className="text-white">Top Results</div>
 
-                        <div className=" flex flex-col justify-center bg-gray-800 rounded-xl h-52 p-4 space-y-2">
+                        <div className=" flex flex-col justify-center bg-gray-800 rounded-xl h-72 p-4 space-y-2">
 
                             <div className="relative w-20  aspect-square">
                                 <Image layout="fill" src={RisingClouds} objectFit="cover" className="rounded-md" />
@@ -56,11 +57,13 @@ const SearchDelegate = () => {
                     {/* Messages */}
                     <div className="flex flex-col space-y-2">
                         <div className="text-white">Messages</div>
-                        <div className="bg-gray-800 rounded-xl h-52 p-4">
+                        <div className="flex flex-col space-y-2  overflow-auto rounded-xl h-72 ">
 
-                            <div className="text-white">
-                                Five ways to be Exceedingly fruitful
-                            </div>
+                            <MessageTiles />
+                            <MessageTiles />
+                            <MessageTiles />
+                            <MessageTiles />
+
 
 
                         </div>
