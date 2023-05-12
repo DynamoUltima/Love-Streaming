@@ -112,6 +112,9 @@
   height: 1em;
   margin-left: 0.5rem;
 }
+.pill {
+  background-color: "red";
+}
 
 @media (max-width: 600px) {
   .grid {
