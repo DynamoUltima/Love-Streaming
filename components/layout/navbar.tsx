@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 import journalist from "../../public/journalist.jpeg"
-import SearchBar from "./searchBar";
+import SearchBar from "../ui/searchBar";
 import { useAuth } from "../context/authContext";
 import { Combobox } from "@headlessui/react";
 
@@ -20,7 +20,6 @@ const Navbar = () => {
     const [query, setQuery] = useState('')
 
 
-    console.log({ searchState: isSearch, place: 'navbar' });
 
     useEffect(()=>{
         if(query.length==0){
@@ -37,9 +36,7 @@ const Navbar = () => {
 
     },[query,router])
 
-    
 
-    console.log(query)
     function closeModal() {
         setIsOpen(false)
     }
@@ -63,12 +60,6 @@ const Navbar = () => {
 
 
                 <div className="flex">
-                    {/* <MagnifyingGlassIcon
-                        className="h-5 w-5 text-gray-400"
-                        aria-hidden="true"
-                        onClick={search}
-
-                    /> */}
 
                     <Combobox onChange={()=>{}}  value=""  >
                         <Combobox.Input
@@ -80,7 +71,7 @@ const Navbar = () => {
                                 setQuery(event.target.value)
                                 
                                 
-                             }}
+                        }}
 
                         />
                     </Combobox>
@@ -91,30 +82,6 @@ const Navbar = () => {
                 </div>
 
 
-                {/* Tab */}
-                <div className="flex flex-row space-x-4 ">
-                    {tablink.map(tab => (
-
-                        <ul key={tab.name}>
-                            <Link href={"/"}>
-                                <div className="flex flex-col items-center">
-                                    <a href="" className={router.pathname === "/dashboardPage" ? "tabCardSelected " : "tabCard   "}>
-                                        <li className="text-gray-500">{tab.name}</li>
-
-                                    </a>
-                                    <div className={"w-1 h-1  bg-white rounded-full"} >
-
-                                    </div>
-                                </div>
-
-
-
-                            </Link>
-
-
-                        </ul>
-                    ))}
-                </div>
 
 
                 <div className=" flex flex-row items-center space-x-4">

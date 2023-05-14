@@ -7,8 +7,8 @@ import TrendingCard from "../components/ui/Cards/trendingCard";
 import { HeartIcon, ShareIcon, FolderOpenIcon, PlusCircleIcon } from "@heroicons/react/24/outline";
 import { Accordion, AccordionBody, AccordionHeader, Button } from "@material-tailwind/react";
 import { SetStateAction, useState } from "react";
-import Navbar from "../components/ui/navbar";
-import SideNav from "../components/ui/sideNav";
+import Navbar from "../components/layout/navbar";
+import SideNav from "../components/layout/sideNav";
 import { messages } from "../data/sample";
 
 const Player = () => {

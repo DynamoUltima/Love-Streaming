@@ -42,7 +42,4 @@
     .tabCardSelected{
        @apply flex flex-row items-center h-2 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-800 hover:text-white  p-6
     }
-
-
-
 }
