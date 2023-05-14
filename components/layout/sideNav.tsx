@@ -3,17 +3,17 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useAuth } from "../context/authContext";
 import {HiHome} from 'react-icons/hi'
-import {IoGrid, IoTime, IoHeart, IoAddCircleOutline, IoAlbums} from 'react-icons/io5'
-import { Icon, Text, Link as Alink, Box, Flex, List, UnorderedList, ListItem } from "@chakra-ui/react";
-import {BsMusicNoteList} from 'react-icons/bs'
-import  {HiOutlineUserCircle} from 'react-icons/hi'
-import {AiOutlineLogout} from "react-icons/ai"
+import { IoGrid, IoAlbums, IoTime, IoHeart } from 'react-icons/io5'
+import { HiOutlineUserCircle } from 'react-icons/hi'
+import { AiOutlineLogout } from 'react-icons/ai'
+import {RiPlayListLine} from 'react-icons/ri'
 
 const SideNav = () => {
 
     const router = useRouter();
     const {isToggled,toggle} = useAuth();
 
+    console.log({toggleState:isToggled,name :'toggling'});
 
     const navLinks = [
         {
@@ -30,11 +30,11 @@ const SideNav = () => {
         },
         {
             name: "History", icon: IoTime,
-            path:'History'
+            path:'/history'
         },
         {
-            name: 'Liked', icon: IoHeart,
-            path:'/Liked'
+            name: 'Favourite', icon: IoHeart,
+            path:'/liked'
         }
     ]
 
@@ -53,7 +53,7 @@ const SideNav = () => {
     let playList = [{ name: 'Gospel Jam' }, { name: 'MyHealings' }, { name: "Hard for the Lord" }]
     return (
         <>
-            <Box pos="relative" className="flex flex-col w-56 bg-mattblack h-full overflow-hidden">
+            <div className="flex flex-col w-56 bg-mattblack h-full overflow-hidden relative">
                 <div className="px-8 py-3">
                     <div className="relative flex flex-col  w-32 h-14 ">
                         <Image src={'/love-logo.png'} alt="logo" layout="fill" objectFit="contain" className='' />
@@ -62,59 +62,53 @@ const SideNav = () => {
 
                 
                 <div className="mt-6">
-                    {navLinks.map(link => (
-                        <ul  key={link.name} className="flex flex-col py-1">
+                    <ul className="flex flex-col py-1">
+                        {navLinks.map(link => (
+                            <li key={link.name} >
+                                <Link href={`${link.path}`}>
+                                    <a className={router.pathname === "/" ? "navCardSelected" : "navCard"}>
+                                        <div className="text-lg text-white/[.2] mr-4"><link.icon /></div>
+                                        <span className="text-base font-medium text-white/[.3]">{link.name}</span>
+                                    </a>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                    
+                </div>
+
+                <div className="border-t border-white/[0.1] mx-5">
+                        <ul className="py-4 text-xs ">
+                            {
+                                playList.map(play => (
+                                    <li key={play.name} >
+                                        <a href="http://">
+                                            <div className="py-1 items-center flex gap-4 py-2 hover:bg-black/[.15] px-2">
+                                                <RiPlayListLine className="text-white/[.2] text-base "/>
+                                                <span className="text-sm text-white/[.4]">{play.name}</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+
+                <div className="absolute bottom-8 w-full">
+                    {footerLinks.map(link => (
+                        <ul  key={link.name} className="">
                             <li>
-                                <Alink py={5} _hover={{textDecoration: "none"}} textAlign={"center"} href={`${link.path}`} className={router.pathname === "/" ? "navCardSelected" : "navCard"}>
-                                    <Icon mr={6} as={link.icon} fontSize={20} color="whiteAlpha.500"/>
-                                    <Text color="whiteAlpha.500">{link.name}</Text>
-                                </Alink>
+                                <a href={`${link.path}`}>
+                                    <div className="py-1 mx-4 items-center flex gap-4 hover:bg-black/[.15] py-2 px-2">
+                                        <link.icon className=" text-white/[.2]"/>
+                                        <span className="text-sm text-white/[.4]">{link.name}</span>
+                                    </div>
+                                </a>
                             </li>
                         </ul>
                     ))}
                 </div>
-
-                <Box borderColor={"whiteAlpha.300"} borderTopWidth={1} mx={5} py={3}>
-                    <div className="">
-                        <Flex 
-                            color="whiteAlpha.500" 
-                            fontSize={14} 
-                            borderWidth={1} 
-                            borderColor={"whiteAlpha.300"} 
-                            rounded={"md"}
-                            align={"center"}
-                            gap={3}
-                            py={2}
-                            px={3}
-                        >
-                            <Icon fontSize={20} as={IoAddCircleOutline} />
-                            <Text>Create a playlist</Text>
-                        </Flex>
-                        {
-                            playList.map(play => (
-                                <Flex  my={3} key={play.name} as={Alink} _hover={{textDecoration: "none"}} align={"center"} href={`#`}>
-                                    <Icon mr={3} as={BsMusicNoteList} fontSize={14} color="whiteAlpha.500"/>
-                                    <Text color="whiteAlpha.500" fontSize={14}>{play.name}</Text>
-                                </Flex>
-
-                            ))
-                        }
-                    </div>
-                </Box>
-
-                <Box position={"absolute"} bottom={4}>
-                    {footerLinks.map(link => (
-                        <ul  key={link.name} className="flex flex-col py-1">
-                            <li>
-                                <Flex py={1} mx={4} gap={6} as={Alink} _hover={{textDecoration: "none"}} align={"center"} href={`${link.path}`}>
-                                    <Icon as={link.icon} fontSize={16} color="whiteAlpha.300"/>
-                                    <Text color="whiteAlpha.400" fontSize={16}>{link.name}</Text>
-                                </Flex>
-                            </li>
-                        </ul>
-                    ))}
-                </Box>
-            </Box>
+            </div>
         </>
 
     );
