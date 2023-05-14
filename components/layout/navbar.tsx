@@ -54,7 +54,7 @@ const Navbar = () => {
                                 overflow-hidden
                                 flex items-center
                     ">
-                        <BiSearch className="text-white/[.2]" />
+                        <BiSearch className="text-white/[.2] text-base" />
                     <Combobox>
                         <Combobox.Input
                         placeholder="Search"
