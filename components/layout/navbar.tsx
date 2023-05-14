@@ -9,6 +9,7 @@ import journalist from "../../public/journalist.jpeg"
 import SearchBar from "../ui/searchBar";
 import { useAuth } from "../context/authContext";
 import { Combobox } from "@headlessui/react";
+import { BiSearch } from 'react-icons/bi'
 
 const Navbar = () => {
 
@@ -46,16 +47,19 @@ const Navbar = () => {
     return (
         <>
             <div className=" hidden md:flex flex-row  p-2 m-2 items-center justify-between px-2">
-                <div className="w-8/12">
+                <div className="w-8/12 h-10 px-2
+                                rounded-md 
+                                bg-black/[.3] 
+                                text-white/[.5] 
+                                overflow-hidden
+                                flex items-center
+                    ">
+                        <BiSearch className="text-white/[.2]" />
                     <Combobox>
                         <Combobox.Input
                         placeholder="Search"
-                            className="w-full h-10 
-                                rounded-md 
-                                px-4 bg-black/[.3] 
-                                focus:border-transparent 
-                                focus:outline-none
-                                text-white/[.5]"
+                            className="w-full h-full px-2 bg-transparent focus:border-transparent 
+                                focus:outline-none"
 
                             displayValue={() => query}
                             onChange={(event) => {
