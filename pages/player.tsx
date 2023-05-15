@@ -6,23 +6,49 @@ import TrendingCard from "../components/ui/Cards/trendingCard";
 
 import { HeartIcon, ShareIcon, FolderOpenIcon, PlusCircleIcon } from "@heroicons/react/24/outline";
 import { Accordion, AccordionBody, AccordionHeader, Button } from "@material-tailwind/react";
-import { SetStateAction, useState } from "react";
+import { SetStateAction, useRef, useState } from "react";
 import Navbar from "../components/ui/navbar";
 import SideNav from "../components/ui/sideNav";
 import { messages } from "../data/sample";
+import { useAuth } from "../components/context/authContext";
 
 const Player = () => {
 
     const router = useRouter();
     const { videoId, title } = router.query;
 
-    const hadndleSubmit = () => { }
+
+    const { isToggled, toggle, setToggle } = useAuth();
+    const playerRef = useRef(null);
 
     const [open, setOpen] = useState(1);
+    const [isPlaying, setIsPlaying] = useState(false);
+    
+
+
+
+
 
     const handleOpen = (value: number) => {
         setOpen(open === value ? 0 : value);
     };
+
+    
+
+    const handlePause = () => {
+        setIsPlaying(false);
+    };
+
+    const handlePlay = () => {
+        setIsPlaying(true);
+    };
+
+
+
+    const hadndleSubmit = () => { }
+
+
+
     return (
 
 
@@ -34,11 +60,16 @@ const Player = () => {
                     <div className="flex flex-col flex-1 h-full w-full ">
                         <div className="h-full rounded-xl shadow-2xl overflow-clip mb-4">
                             <ReactPlayer
+                                ref={playerRef}
                                 url={`https://www.youtube.com/watch?v=${videoId}&rel=0`}
                                 width="100%"
                                 height={'100%'}
                                 controls={true}
+                                playing={isPlaying}
                                 pip={true}
+                                // onPlay={handlePlay}
+                                // onPause={handlePause}
+                                
 
                             />
                         </div>
@@ -72,6 +103,8 @@ const Player = () => {
                                         </div>
 
                                     </Button>
+
+                                    
 
                                 </div>
 
