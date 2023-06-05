@@ -11,9 +11,6 @@ const CategoryCard = () => {
                     </div>
    
                 </div>
-                {/* Text */}
-                
-
             </div>
         </>
     );

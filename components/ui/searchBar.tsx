@@ -50,7 +50,10 @@ const SearchBar = ({ isOpen = false, setIsOpen }: { isOpen: boolean, setIsOpen: 
 
                     <Combobox nullable={true} value={selected} onChange={(event) => {
                         setIsOpen(false)
-                        setSelected(event)
+                        setSelected(event as {
+    id: number;
+    name: string;
+})
                     }}>
                         <div className="relative mt-1 " >
                             <div className=" w-full cursor-default overflow-hidden rounded-lg bg-mattblack text-left shadow-md border border-mattblack hover:border-black p-1 sm:text-sm">
